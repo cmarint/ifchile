@@ -1,0 +1,13 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{ngDialogData.title}}
+    </div>
+    <div class="panel-body">
+        <p>{{ngDialogData.message}}</p>
+    </div>
+    <div class="panel-footer">
+    		 <button ng-if="ngDialogData.isConfirm" type="button" class="btn btn-primary" ng-click="confirm(confirmValue);">Aceptar</button> 
+            <button type="button" class="btn btn-primary" ng-click="closeThisDialog();">Cerrar</button>
+    </div>
+   
+</div>
