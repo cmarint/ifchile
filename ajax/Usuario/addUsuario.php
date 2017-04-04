@@ -27,7 +27,7 @@
                 //echo "Contador:".$COUNT;
                 if ($COUNT > 0) { //El Usuario o Rut o Correo ya existe
                     header("HTTP/1.0 404 Not Found");
-                    //echo '{"data": "Not Json Data"}';
+                    echo '{"data": "Not Json Data"}';
                 } else {
                 
                     $query="INSERT INTO usuario(Tipoper,Rut,Nombre,Usuario,Correo,Estado,IdPerfil,Attemp,Password) VALUES ('A','".$request->rut."','".$request->nombre."','".$request->nombreusuario."','".$request->email."',1,".$perfil.",5,'".md5($request->password)."')";

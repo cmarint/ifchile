@@ -71,7 +71,6 @@ $_SESSION['loggedin'] = time();
       <!--<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script> -->
       <script src="content/console-sham.js"></script>
       <script src="content/angular/angular-file-upload.min.js"></script>
-      <script src="js/log4js.js"></script>
       
       <!-- Fin fileUpload -->
       
