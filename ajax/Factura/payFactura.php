@@ -66,14 +66,14 @@
                              $detalle = "<table border=\"0\" cellspacing=\"5\" cellpadding=\"2\">";
                             $montoinv = "";
                             while ($rec = mysqli_fetch_array($res, MYSQLI_NUM)) {
-                                $detalle .= "<tr><th align=\"left\">Documento Nº</th><td>".$rec[0]."</td></tr>";
+                                $detalle .= "<tr><th align=\"left\" width=\"35%\" >Documento N&ordm;</th><td>".$rec[0]."</td></tr>";
                                 $detalle .= "<tr><th align=\"left\">Emisor</th><td>".$rec[1]."</td></tr>";
                                 $detalle .= "<tr><th align=\"left\">Pagador</th><td>".$rec[2]."</td></tr>";
                                 $detalle .= "<tr><th align=\"left\">Monto</th><td>$".number_format(round($rec[3]),0,',','.')."</td></tr>";
                                 $detalle .= "<tr><th align=\"left\">Monto a Invertir</th><td>$".number_format(round($rec[4]),0,',','.')."</td></tr>";
                                 $montoinv = round($rec[4]);
                                 $detalle .= "<tr><th align=\"left\">Seguro</th><td>".("1" == $request['seguro'] ? 'SI':'NO')."</td></tr>";
-                                $detalle .= "<tr><th align=\"left\">Tasa de Descuento</th><td>%".$rec[5]."</td></tr>";
+                                $detalle .= "<tr><th align=\"left\">Tasa de Descuento</th><td>".$rec[5]."%</td></tr>";
                                 $detalle .= "<tr><th align=\"left\">Utilidad Esperada</th><td>$".number_format(round($rec[6]),0,',','.')."</td></tr>";
                                 break;
                             }
@@ -89,13 +89,13 @@
                             </head>
                             <body>
                               <p>Mi ganancia punto com le da la bienvenida a ser parte de esta innovadora  plataforma, donde</p>
-                              <p>podrás  invertir de una manera f&aacute;cil, r&aacute;pida y segura.</p>
+                              <p>podr&aacute;s  invertir de una manera f&aacute;cil, r&aacute;pida y segura.</p>
                               <p>Usted ha comprado dicho(s) documento(s):</p>
                               <p>".$detalle."</p>
                               <p>A continuaci&oacute;n lo contactar&aacute; uno de nuestros ejecutivos.</p>
-                              <p>Le recordamos que para efectuar el pago del o los documento(s), deberá cancelar el <p>
+                              <p>Le recordamos que para efectuar el pago del o los documento(s), deber&aacute; cancelar el <p>
                               <p><b>MONTO A INVERTIR: $".number_format($montoinv,0,',','.')."</b></p>
-                              <p>Razón Social: Mi Ganancia Punto Com</p>
+                              <p>Raz&oacute;n Social: Mi Ganancia Punto Com</p>
                               <p>Cuenta Corriente: 97194562</p>
                               <p>Banco: Scotiabank</p>
                               <p>Rut: 76.210.356-7</p>
