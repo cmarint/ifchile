@@ -135,7 +135,8 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
                         { data: 'Receptor' },
                         { data:  null, render: function (data, type, row) 
                             {
-                               return $filter('currency')(data.Monto, '$', 0);
+                               //return $filter('currency')(data.Monto, '$', 0);
+                               return data.Monto * 1;
                             }
                         },
                         //{ data: 'Estado'},
@@ -307,7 +308,8 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
                         { data: 'Receptor' },
                         { data:  null, render: function (data, type, row) 
                             {
-                               return $filter('currency')(data.Monto, '$', 0);
+                               //return $filter('currency')(data.Monto, '$', 0);
+                               return data.Monto*1;
                             }
                         },
                         //{ data: 'Estado'},
