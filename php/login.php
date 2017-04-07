@@ -23,7 +23,7 @@ if(!empty($_GET)){
 				break;
 			}
 			if($id==null){
-                echo "<div class=\"alert alert-info\"><strong>Usuario No Existe o está Inactivo</strong></div>";
+                echo "<div class=\"alert alert-danger\"><strong>Usuario No Existe o está Inactivo</strong></div>";
 			}else{
                 $user_id=null;
                 $sql2= "select u.ID, u.NOMBRE, p.DESCRIPCION, u.idPerfil, u.Correo from usuario u, perfil p where (u.usuario=\"$get_username\" or u.correo=\"$get_username\") and u.password='".$get_password."' and u.estado=1 and u.idPerfil = p.id";
@@ -42,10 +42,10 @@ if(!empty($_GET)){
                      $attemp--;
                      if ($attemp >= 0) {
                         $sql3 = "update usuario set attemp = " . $attemp . " where Id=$id";           
-                        echo "<div class=\"alert alert-info\"><strong>Error:</strong>Contraseña Inválida. Le quedan (". $attemp . ") Intentos</div>";
+                        echo "<div class=\"alert alert-danger\"><strong>Error:</strong>Contraseña Inválida. Le quedan (". $attemp . ") Intentos</div>";
                      } else {
                         $sql3 = "update usuario set estado=0 where Id=$id";
-                        echo "<div class=\"alert alert-info\"><strong>Error:</strong>Contraseña Inválida. Por seguridad el usuario ha sido bloqueado.<br>Contacte al Administrador.</div>";
+                        echo "<div class=\"alert alert-danger\"><strong>Error:</strong>Contraseña Inválida. Por seguridad el usuario ha sido bloqueado.<br>Contacte al Administrador.</div>";
                      }
                      $result3=$mysqli->query($sql3) or die($mysqli->error.__LINE__);
                  } else {

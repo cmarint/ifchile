@@ -96,7 +96,8 @@
                         elseif ($request->Estado == 5) {
                             if ($request->estadoUpd == 3) { //Si está en mora y pasa a "Pagada"
                                 $query2 = "UPDATE factura SET FechaPago = NOW(),TasaMora = $request->TasaMora, 
-                                UtilidadReal = ((Monto * $Descuento / 100 / 30 * DATEDIFF(FechaVencimiento,(SELECT FechaCompra FROM orden WHERE IdFactura=$request->Id))) + (Monto * $request->TasaMora / 100 / 30 * DATEDIFF(NOW(), FechaVencimiento)))
+                                UtilidadReal = ((Monto * $Descuento / 100 / 30 * DATEDIFF(FechaVencimiento,(SELECT FechaCompra FROM orden WHERE IdFactura=$request->Id))) + (Monto * $request->TasaMora / 100 / 30 * DATEDIFF(NOW(), FechaVencimiento))),
+                                MontoMora = (Monto * $request->TasaMora / 100 / 30 * DATEDIFF(NOW(), FechaVencimiento))
                                 WHERE Id= $request->Id";
                             } else {
                                 $query2 = "UPDATE factura SET FechaPago = NOW(),UtilidadReal = (Monto * $Descuento / 100 / 30 * DATEDIFF(FechaVencimiento,(SELECT FechaCompra FROM orden WHERE IdFactura=$request->Id))) WHERE Id= $request->Id";   

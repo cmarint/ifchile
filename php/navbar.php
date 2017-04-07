@@ -30,6 +30,7 @@ $_SESSION['loggedin'] = time();
       <link rel="stylesheet" type="text/css" href="content/angular/css/ngLoader.css">
       <link rel="stylesheet" type="text/css" href="content/plugins/datepicker/datepicker3.css">
       <link rel="stylesheet" href="content/bootstrap/css/AdminLTE.min.css"> 
+      <link rel="stylesheet" href="content/bootstrap/css/estilo.css">
       <link href="content/angular/css/angular-bootstrap-toggle.min.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
       
@@ -94,7 +95,7 @@ $_SESSION['loggedin'] = time();
       
   </head>
   <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default navbar-fixed-top topnav">
   <div class="container-fluid">
     <div class="navbar-header">
     <?php if(!isset($_SESSION["user_id"])):?>
@@ -105,7 +106,7 @@ $_SESSION['loggedin'] = time();
     </div>
       <ul class="nav navbar-nav">
     <?php if(!isset($_SESSION["user_id"])):?>
-       <li><a href="./login.php">ENTRAR</a></li>
+       <!-- <li><a href="./login.php" class="btn btn-info">ENTRAR</a></li> -->
       <?php else: 
            if($_SESSION["idPerfil"]==3):
       ?>

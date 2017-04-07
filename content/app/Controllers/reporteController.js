@@ -65,6 +65,10 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
        setDataTableCompradas('#tblFactPublic',{"Estado" : idEstado});
     }
      
+    oreporte.getFacturasPagadas = function (idEstado) {
+       setDataTablePagadas('#tblFactPublic',{"Estado" : idEstado});
+    }
+
     oreporte.getInversionistas = function (idEstado) {
        setDataTableInversion('#tblInversion',{"Estado" : idEstado},idEstado);
     }
@@ -334,6 +338,74 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
             "order": [[0, 'asc']]
         });
     }
+
+    function setDataTablePagadas(tbl,filtro)
+    {
+       var otable =  $(tbl).DataTable({
+          "dom": "Bfrtip",
+          "buttons": ['csv', 'excel', 'pdf'],
+          "paging": true,
+          "lengthChange": true,
+          "searching": true,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false,
+          "processing": true,
+          "ajax":
+            { "url":'ajax/Reportes/getFacturas.php',
+            "dataType": "json",
+            "contentType": "application/json",
+            "type":'POST',
+            "data":function ( d ) {return JSON.stringify(filtro);}
+            },
+          "language": {"url":"//cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"},
+          "scrollY": "300px",
+          "pagingType": "full_numbers",
+          "columns": [
+                        { data: 'Id' },
+                        { data: 'Emisor' },
+                        { data: 'Receptor' },
+                        { data:  null, render: function (data, type, row)
+                            {
+                               //return $filter('currency')(data.Monto, '$', 0);
+                               return data.Monto*1;
+                            }
+                        },
+                        { data:  null, render: function (data, type, row)
+                            {
+                               //return $filter('currency')(data.Monto, '$', 0);
+                               return data.TasaMora*1;
+                            }
+                        },
+                        { data:  null, render: function (data, type, row)
+                            {
+                               //return $filter('currency')(data.Monto, '$', 0);
+                               return data.MontoMora*1;
+                            }
+                        },
+                        //{ data: 'Estado'},
+                        { data: null, render: function (data, type, row)
+                            {
+                               return $filter('date')(new Date(data.FechaPublicacion),'dd-MM-yyyy');
+                            }
+                        },
+                        { data: null, render: function (data, type, row)
+                            {
+                               return $filter('date')(new Date(data.FechaVencimiento),'dd-MM-yyyy');
+                            }
+                        },
+                        { data: null, render: function (data, type, row)
+                            {
+                               return $filter('date')(new Date(data.FechaCompra),'dd-MM-yyyy');
+                            }
+                        },
+                        { data: 'DescripcionEstado' },
+                        { data: 'Usuario' }
+                     ],
+            "order": [[0, 'asc']]
+        });
+    }
+
     
     function setDataTableLog(tbl,filtro)
     {        

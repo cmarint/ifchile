@@ -37,7 +37,8 @@
                 
 				if(($Estado == 2) || ($Estado == 5) || ($Estado == 4) || ($Estado == 6) || ($Estado == 7) || ($Estado == 8) || ($Estado == 4678)) //Todas Compradas
 				{
-					$query="SELECT factura.Id, factura.Monto, factura.Emisor, factura.Glosa, factura.Receptor, factura.Descuento, factura.UtilidadEsperada, factura.UtilidadReal, factura.FechaPublicacion, factura.FechaPago, factura.FechaVencimiento, factura.PlazoPago, factura.DiasPago, factura.ImagenFactura,factura.DescuentoSeguro,factura.UtilidadEsperadaSeguro,factura.Comentario,factura.FechaExpiracion ,estadofactura.Id as Estado, estadofactura.Descripcion as DescripcionEstado, orden.isSeguro,orden.FechaCompra as FechaCompra,orden.Participacion, usuario.Correo as Usuario
+					$query="SELECT factura.Id, factura.Monto, factura.Emisor, factura.Glosa, factura.Receptor, factura.Descuento, factura.UtilidadEsperada, factura.UtilidadReal, factura.FechaPublicacion, factura.FechaPago, factura.FechaVencimiento, factura.PlazoPago, factura.DiasPago, factura.ImagenFactura,factura.DescuentoSeguro,factura.UtilidadEsperadaSeguro,factura.Comentario,factura.FechaExpiracion ,estadofactura.Id as Estado, estadofactura.Descripcion as DescripcionEstado, orden.isSeguro,orden.FechaCompra as FechaCompra,orden.Participacion, usuario.Correo as Usuario,
+                    factura.MontoMora, factura.TasaMora
 					FROM factura INNER JOIN facturaestado ON factura.Id = facturaestado.IdFactura 
 					INNER JOIN orden ON factura.Id = orden.IdFactura
 					INNER JOIN usuario ON usuario.Id = orden.IdUsuario

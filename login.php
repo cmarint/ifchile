@@ -7,35 +7,44 @@
         Login (username, password);
     }
 </script>
-<p id="mensaje"></p>
-<div id="error">
-        <!-- error will be shown here ! -->
-</div>
+<script src="js/login.js"></script>
+
+<div class="intro-login">
 <div class="container" >
 
-<div class="row">
-<div class="col-md-6">
-		<h2>Entrar</h2>
-		<form role="form" name="login-form" method="post">
-		  <div class="form-group">
-		    <label for="user_email">Nombre de usuario o email</label>
-		    <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario">
-		  </div>
-		  <div class="form-group">
-		    <label for="password">Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a">
-		  </div>
+        <!-- error will be shown here ! -->
 
-		  <button type="button" onclick="Logon()" id="btn-login" class="btn btn-success">Acceder</button>
-		</form>
+    <div class="row">
+
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+                <form class="form-signin" role="form" name="login-form" method="post">
+                <input type="text" name="username" id="username" class="form-control" placeholder="Ingrese Usuario o email" required autofocus>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese Contrase&ntilde;a" required>
+                <button class="btn btn-lg btn-primary btn-block" type="button" onclick="Logon()" id="btn-login">
+                    Acceder</button>
+                <div id="error"></div>
+                <a href="recuperarContrasena.php" class="pull-right need-help">Olvid&oacute; su Contrase&ntilde;a? </a><span class="clearfix"></span>
+                </form>
+            </div>
+        </div>
+
+    </div>
 </div>
 </div>
-<div class="row">
-	<div class="col-md-6">
-		<a href="recuperarContrasena.php">Olvido su contraseña?</a>
-	</div>
-</div>
-</div>
-        <script src="js/login.js"></script>
+
+
+
+ <footer>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright text-muted small">Copyright &copy; MISGANANCIAS.COM 2017. Todos Los Derechos Reservados</p>
+                </div>
+            </div>
+
+    </footer>
 	</body>
 </html>

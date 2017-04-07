@@ -34,7 +34,7 @@
                             <div class="col-md-12" ng-show="ngDialogData.datos.EstadoOld >= 6">                
                                 <div class="form-group input-group">
                                 <span class="input-group-addon"><i class="fa fa-line-chart"></i> Tasa Especial de Mora</span> 
-                                <input type="number" min="0" max="3" ng-maxlength="3" name="TasaMora" data-ng-model="ngDialogData.datos.TasaMora" class="form-control" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
+                                <input type="number" min="0" ng-maxlength="3" name="TasaMora" data-ng-model="ngDialogData.datos.TasaMora" class="form-control" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
                                 </div>
                             </div>
                             <div class="col-md-12">                                
