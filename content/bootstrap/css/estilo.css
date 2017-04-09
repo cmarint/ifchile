@@ -47,13 +47,23 @@ table {
 }
 
 .intro-login {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
+    padding-top: 20px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 155px;
     text-align: center;
-    color: #f8f8f8;
-    background: url(../../images/intro-bg.jpg) no-repeat center center;
+    /*color: #f8f8f8;*/
+    background: url(../../images/login1.jpg) no-repeat center center;
     background-size: cover;
 }
+
+.intro-loginrecupera {
+    padding-top: 20px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 100px;
+    text-align: center;
+    /*color: #f8f8f8;*/
+    background: url(../../images/login.jpg) no-repeat center center;
+    background-size: cover;
+}
+
 
 .intro-message {
     position: relative;
@@ -177,12 +187,12 @@ table {
 }
 
 footer {
-    padding: 50px 0;
+    padding: 5px 0;
     background-color: #f8f8f8;
 }
 
 p.copyright {
-    margin: 15px 0 0;
+    margin: 2px 0 0;
 }
 
 

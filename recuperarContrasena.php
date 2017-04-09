@@ -1,4 +1,5 @@
 <?php include "php/navbar.php"; ?>
+<div class="intro-loginrecupera">
 <div class="container" ng-controller="userController as oUser">
     <div class="row">
         <div class="row">
@@ -34,3 +35,6 @@
         </div>
     </div>
 </div>
+</div>
+	</body>
+</html>
