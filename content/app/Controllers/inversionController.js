@@ -102,7 +102,14 @@ function inversionController($scope, inversionFactory, $location,ngDialog,$filte
                         { data: 'Id', "visible": true, "searchable": true },
                         { data: null, render: function (data, type, row) 
                             {
-                               return "<a href=# id='imgFactView'><img src='"+data.ImagenFactura+"' width='30' height='50' alt='Factura' class='img-rounded'></a>";
+
+                               //return "<a href=# id='imgFactView'><img src='"+data.ImagenFactura+"' width='30' height='50' alt='Factura' class='img-rounded'></a>";
+                               var extension = data.ImagenFactura.substring(data.ImagenFactura.length-4,data.ImagenFactura.length);
+                                if (extension == ".pdf") {
+                                    return "<a href=# id='imgFactView'><img src='./content/images/pdfs.png' width='30' height='40' alt='Factura' class='img-rounded'></a>";
+                                } else {
+                                    return "<a href=# id='imgFactView'><img src='"+data.ImagenFactura+"' width='30' height='50' alt='Factura' class='img-rounded'></a>";
+                                }
                             }
                         },
                         { data: 'Emisor' },
@@ -176,7 +183,14 @@ function inversionController($scope, inversionFactory, $location,ngDialog,$filte
                         { data: 'Id', "visible": true, "searchable": true },
                         { data: null, render: function (data, type, row) 
                             {
-                               return "<a href=# id='imgFactView'><img src='"+data.ImagenFactura+"' width='30' height='50' alt='Factura' class='img-rounded'></a>";
+                               //return "<a href=# id='imgFactView'><img src='"+data.ImagenFactura+"' width='30' height='50' alt='Factura' class='img-rounded'></a>";
+
+                                var extension = data.ImagenFactura.substring(data.ImagenFactura.length-4,data.ImagenFactura.length);
+                                if (extension == ".pdf") {
+                                    return "<a href=# id='imgFactView'><img src='./content/images/pdfs.png' width='30' height='40' alt='Factura' class='img-rounded'></a>";
+                                } else {
+                                    return "<a href=# id='imgFactView'><img src='"+data.ImagenFactura+"' width='30' height='50' alt='Factura' class='img-rounded'></a>";
+                                }
                             }
                         },
                         { data: 'Emisor' },

@@ -88,7 +88,7 @@
                               <title>Bienvenido</title>
                             </head>
                             <body>
-                              <p>Mi ganancia punto com le da la bienvenida a ser parte de esta innovadora  plataforma, donde</p>
+                              <p>MisGanancias.com le da la bienvenida a ser parte de esta innovadora  plataforma, donde</p>
                               <p>podr&aacute;s  invertir de una manera f&aacute;cil, r&aacute;pida y segura.</p>
                               <p>Usted ha comprado dicho(s) documento(s):</p>
                               <p>".$detalle."</p>
