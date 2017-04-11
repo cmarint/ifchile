@@ -140,7 +140,8 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
                         { data:  null, render: function (data, type, row) 
                             {
                                //return $filter('currency')(data.Monto, '$', 0);
-                               return data.Monto * 1;
+                               //return data.Monto * 1;
+                               return $filter('number')(data.Monto*1, 2);
                             }
                         },
                         //{ data: 'Estado'},
@@ -312,8 +313,8 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
                         { data: 'Receptor' },
                         { data:  null, render: function (data, type, row) 
                             {
-                               //return $filter('currency')(data.Monto, '$', 0);
-                               return data.Monto*1;
+                               return $filter('number')(data.Monto*1, 2);
+                               //return data.Monto*1;
                             }
                         },
                         //{ data: 'Estado'},
@@ -367,20 +368,20 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
                         { data: 'Receptor' },
                         { data:  null, render: function (data, type, row)
                             {
-                               //return $filter('currency')(data.Monto, '$', 0);
-                               return data.Monto*1;
+                               return $filter('number')(data.Monto*1, 2);
+                               //return data.Monto*1;
                             }
                         },
                         { data:  null, render: function (data, type, row)
                             {
                                //return $filter('currency')(data.Monto, '$', 0);
-                               return data.TasaMora*1;
+                               return $filter('number')(data.TasaMora*1, 2);
+
                             }
                         },
                         { data:  null, render: function (data, type, row)
                             {
-                               //return $filter('currency')(data.Monto, '$', 0);
-                               return data.MontoMora*1;
+                               return $filter('number')(data.MontoMora*1, 2);
                             }
                         },
                         //{ data: 'Estado'},
