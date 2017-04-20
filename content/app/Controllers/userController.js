@@ -67,6 +67,17 @@ function userController($scope, userFactory, $location, ngDialog, $filter, $wind
             //oUser.getUsuarios();
         })
         .error(function (data) {
+
+
+             ngDialog.openConfirm(
+                    {
+                        template: 'html/message.html',
+                        plain: false,
+                        data: {'data':data,'title':'Alerta','message':'No es posible eliminar Inversionista con Operaciones.'},
+                        showClose: false,
+                        closeByEscape: true,
+                        id: 'dgAlerta'
+                    });
             oUser.error = data.ExceptionMessage;
 
         });
