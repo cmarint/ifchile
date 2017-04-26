@@ -449,7 +449,7 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
                             }
                         }
                      ],
-            "order": [[0, 'asc']]
+            "order": [[0, 'des']]
         });
         
        
