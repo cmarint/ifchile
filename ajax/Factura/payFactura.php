@@ -66,7 +66,7 @@
                              $detalle = "<table border=\"0\" cellspacing=\"5\" cellpadding=\"2\">";
                             $montoinv = "";
                             while ($rec = mysqli_fetch_array($res, MYSQLI_NUM)) {
-                                $detalle .= "<tr><th align=\"left\" width=\"35%\" >Documento N&ordm;</th><td>".$rec[0]."</td></tr>";
+                                $detalle .= "<tr><th align=\"left\" width=\"35%\" >ID</th><td>".$rec[0]."</td></tr>";
                                 $detalle .= "<tr><th align=\"left\">Emisor</th><td>".$rec[1]."</td></tr>";
                                 $detalle .= "<tr><th align=\"left\">Pagador</th><td>".$rec[2]."</td></tr>";
                                 $detalle .= "<tr><th align=\"left\">Monto</th><td>$".number_format(round($rec[3]),0,',','.')."</td></tr>";

@@ -41,9 +41,6 @@
 				{
 					$FchExp = date_format(date_create(substr($request->FechaExp,0,10)), 'Y-m-d H:i:s');
                     $FchVenc = date_format(date_create(substr($request->FechaVencimiento,0,10)), 'Y-m-d H:i:s');
-                    
-					//$FchExp = date_format(date_create_from_format('d/m/Y',  $request->FechaExpiracion), 'Y-m-d H:i:s');			
-                    //$FchVenc = date_format(date_create_from_format('d/m/Y', $request->FechaVencimiento), 'Y-m-d H:i:s');	
 
 					$query="UPDATE factura SET Monto='$request->Monto',Emisor='$request->Emisor',Glosa='$request->Glosa',Receptor='$request->Receptor',Descuento=$request->Descuento,UtilidadEsperada=$request->UtilidadEsperada,UtilidadReal=null,FechaPago=null,FechaVencimiento='$FchVenc',PlazoPago=null,DiasPago=$request->DiasPago,ImagenFactura='$request->ImagenFactura',DescuentoSeguro=$request->DescuentoSeguro,UtilidadEsperadaSeguro=$request->UtilidadEsperadaSeguro,Comentario='$request->Comentario',FechaExpiracion='$FchExp' WHERE Id= $request->Id";
                     

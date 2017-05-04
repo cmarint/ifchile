@@ -374,6 +374,33 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
                         },
                         { data:  null, render: function (data, type, row)
                             {
+                               return $filter('number')(data.UtilidadReal*1, 2);
+                            }
+                        },
+                        { data:  null, render: function (data, type, row)
+                            {
+                               if (data.isSeguro == 1) {
+                                   return $filter('number')(data.DescuentoSeguro*1, 2);
+                               } else {
+                                   return $filter('number')(data.Descuento*1, 2);
+                               }
+
+
+                            }
+                        },
+                        { data:  null, render: function (data, type, row)
+                            {
+                               if (data.isSeguro == 1) {
+                                   return $filter('number')(data.UtilidadEsperadaSeguro*1, 2);
+                               } else {
+                                   return $filter('number')(data.UtilidadEsperada*1, 2);
+                               }
+
+
+                            }
+                        },
+                        { data:  null, render: function (data, type, row)
+                            {
                                //return $filter('currency')(data.Monto, '$', 0);
                                return $filter('number')(data.TasaMora*1, 2);
 
@@ -384,12 +411,11 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
                                return $filter('number')(data.MontoMora*1, 2);
                             }
                         },
-                        //{ data: 'Estado'},
-                        { data: null, render: function (data, type, row)
+                        /*{ data: null, render: function (data, type, row)
                             {
                                return $filter('date')(new Date(data.FechaPublicacion),'dd-MM-yyyy');
                             }
-                        },
+                        },*/
                         { data: null, render: function (data, type, row)
                             {
                                return $filter('date')(new Date(data.FechaVencimiento),'dd-MM-yyyy');
@@ -400,7 +426,7 @@ function reporteController($scope, reporteFactory,ngDialog,$location, $filter, $
                                return $filter('date')(new Date(data.FechaCompra),'dd-MM-yyyy');
                             }
                         },
-                        { data: 'DescripcionEstado' },
+                        //{ data: 'DescripcionEstado' },
                         { data: 'Usuario' }
                      ],
             "order": [[0, 'asc']]

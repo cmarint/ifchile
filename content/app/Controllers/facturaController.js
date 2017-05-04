@@ -106,8 +106,8 @@ function facturaController($scope, $sce, facturaFactory, $location,ngDialog,$fil
             ReloadGrilla('ajax/Factura/getFactura.php','#tblFactPublic',{"Estado" : estadoUpd});
            }
             else{
-                 if(estadoUpd==2)
-             ReloadGrilla('ajax/Factura/getFactura.php','#tblFactCompradas',{"Estado" : estadoUpd});
+                 if(estadoUpd==2 || estadoUpd==3)
+             ReloadGrilla('ajax/Factura/getFactura.php','#tblFactCompradas',{"Estado" : 2});
             }
             ngDialog.close('dgUpdFactura');
         })

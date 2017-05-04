@@ -24,6 +24,7 @@
                 }
                 
                 if ($COUNT > 0) { //El Usuario o Rut o Correo ya existe
+                    echo "Ya existe";
                     header("HTTP/1.0 404 Not Found");
                     echo '{"data": "Not Json Data"}';
                 } else {
@@ -42,15 +43,15 @@
                                         </head>
                                         <body>
                                         <p>MisGanancias.com le da la m&aacute;s cordial bienvenida a su plataforma de inversi&oacute;n y le</p> <p>invita a disfrutar de las mejores alternativas de inversi&oacute;n que tenemos disponibles para</p> 
-                                        <p>nuestros inversionistas. Le informamos que con fecha $datenow, fue creado</p>
+                                        <p>nuestros inversionistas. Le informamos que con fecha ".$datenow.", fue creado</p>
                                         <p>su usuario de acceso a nuestra plataforma con los siguientes datos:</p>
                                         <table border=\"0\" cellspacing=\"5\" cellpadding=\"2\">
-                                        <tr><th>Nombre o Raz&oacute;n Social:</th><td>$request['nombre']</td></tr>
-                                        <tr><th>RUT:</th><td>$request['rut']</td></tr>
-                                        <tr><th>Usuario:</th><td>$request['username']</td></tr>
-                                        <tr><th>Clave de acceso:</th><td>$request['password']</td></tr>
+                                        <tr><th>Nombre o Raz&oacute;n Social:</th><td>".$request['nombre']."</td></tr>
+                                        <tr><th>RUT:</th><td>".$request['rut']."</td></tr>
+                                        <tr><th>Usuario:</th><td>".$request['username']."</td></tr>
+                                        <tr><th>Clave de acceso:</th><td>".$request['password']."</td></tr>
                                         </table>
-                                        <p>En los pr&oacute;ximos minutos un ejecutivo de inversi&oacute;n lo contactar&aacute; para resolver</p> <p>cualquier inquietud y lo acompañar&aacute; a conocer nuestra plataforma de inversi&oacute;n.</p>
+                                        <p>En los pr&oacute;ximos minutos un ejecutivo de inversi&oacute;n lo contactar&aacute; para resolver</p> <p>cualquier inquietud y lo acompa&ntilde;ar&aacute; a conocer nuestra plataforma de inversi&oacute;n.</p>
                                         <br>
                                         <p>Le saluda atentamente, MisGanancias.com.</p>    
                                         </body>
@@ -124,6 +125,7 @@
 			}
 		}
 		else{
+            echo "Sin data";
 		    header("HTTP/1.0 404 Not Found");
 		    echo '{"data": "Empty PostData"}';
 		}
