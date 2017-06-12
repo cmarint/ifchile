@@ -76,7 +76,7 @@ ng-mouse-wheel-down="zoomWidth = zoomWidth - 20;imgStyle.width = zoomWidth  +'px
             <div class="alert alert-danger" ng-show="showme2" role="alert">Problemas con la Factura, No es posible concretar la operación.</div>
             <!-- /.box-body -->
              <div class="box-footer">          
-                    <button type="button" class="btn btn-success" ng-click="oFactura.comprarFactura(ngDialogData.datos, ngDialogData.seguro);" ng-hide="showme">Aceptar</button>
+                    <button type="button" class="btn btn-success" ng-click="oFactura.comprarFactura(ngDialogData.datos, ngDialogData.seguro);" ng-hide="showme" ng-disabled="botonAceptar">Aceptar</button>
                     <button type="button" class="btn btn-primary" ng-click="oFactura.CierraCompra();">Cerrar</button>
             </div>
      

@@ -28,15 +28,19 @@ app.factory('facturaFactory', function ($http) {
     };
 });
 
-app.controller('facturaController', facturaController, ['$scope', '$sce', 'facturaFactory','fileUpload','FileUploader']);
+app.controller('facturaController', facturaController, ['$scope', '$sce', 'facturaFactory','fileUpload','FileUploader','$filter']);
 
-function facturaController($scope, $sce, facturaFactory, $location,ngDialog,$filter,fileUpload,FileUploader) {
+function facturaController($scope, $sce, facturaFactory, $location,ngDialog,$filter,fileUpload,FileUploader,$filter) {
     var ofactura = this;
     ofactura.Fact = facturaFactory;
 
     var savedData = {};
     $scope.archivosmultiples = {};
     $scope.imagenopdf = '';
+    $scope.botonAceptar = false;
+
+
+
 
     //Lista facturas Publicadas
     ofactura.getFacturasPublicadas = function () {
@@ -192,8 +196,26 @@ function facturaController($scope, $sce, facturaFactory, $location,ngDialog,$fil
                         width:'900px'
                     });
 
+
     }
     
+    ofactura.limpiaCaracteres = function(valor, texto)
+    {
+        if (valor != null)
+        {
+            var tittles = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç'";
+            var original = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc ";
+            var input = valor;
+            for (var i = 0; i < tittles.length; i++) {
+                input = input.replace(tittles.charAt(i), original.charAt(i)).toLowerCase();
+            };
+
+           $('#'+texto).val(input);
+           $('#'+texto).trigger('input');
+        }
+    }
+
+
     //show PopUp Add Factura
     ofactura.showPopUpUpdFactura = function(dataFactura, pagada)
     {
@@ -686,6 +708,7 @@ function facturaController($scope, $sce, facturaFactory, $location,ngDialog,$fil
             //location.reload();
             //ofactura.getCatalogo();
             $scope.showme = true;
+            $scope.botonAceptar = true;
             
         })
         .error(function (data) {

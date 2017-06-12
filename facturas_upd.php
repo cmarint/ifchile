@@ -17,14 +17,14 @@
                 <label>Emisor</label>
                 <div class="form-group input-group"  ng-class="{'has-error':frmOp.txtEmisor.$error.required}">
                 <span class="input-group-addon"><i class="fa fa-user-plus"></i></span> 
-                   <input  type="text" value="Nombre Emisor" name="txtEmisor" class="form-control" data-ng-model="ngDialogData.datos.Emisor" ng-required="true">
+                   <input  type="text" value="Nombre Emisor" id="txtEmisor" name="txtEmisor" class="form-control" data-ng-model="ngDialogData.datos.Emisor" ng-required="true" ng-change="oFactura.limpiaCaracteres(ngDialogData.datos.Emisor,'txtEmisor')">
                 </div>
             </div>    
             <div class="col-md-4">
                 <label>Pagador</label>
                 <div class="form-group input-group" ng-class="{'has-error':frmOp.txtReceptor.$error.required}">
                 <span class="input-group-addon"><i class="fa fa-user-secret"></i></span> 
-                    <input  type="text" name="txtReceptor" class="form-control" data-ng-model="ngDialogData.datos.Receptor" ng-required="true">       
+                    <input  type="text" name="txtReceptor" id="txtReceptor" class="form-control" data-ng-model="ngDialogData.datos.Receptor" ng-required="true" ng-change="oFactura.limpiaCaracteres(ngDialogData.datos.Receptor,'txtReceptor')">
                 </div>
             </div>
         </div>
