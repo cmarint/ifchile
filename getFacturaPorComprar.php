@@ -11,8 +11,13 @@
             <div class="box-body no-padding">
              
                 <div class="col-md-5 col-sm-6 bg-gray" >
+                    <a href="{{ngDialogData.datos.ImagenFactura}}"  target="_blank" ng-show="{{ngDialogData.datos.ImagenFactura.substring(ngDialogData.datos.ImagenFactura.length-4,ngDialogData.datos.ImagenFactura.length) === '.pdf'}}">{{ngDialogData.datos.ImagenFactura.substring(9,ngDialogData.datos.ImagenFactura.length)}}</a>
+
+                    <img src="{{ngDialogData.datos.ImagenFactura}}" ng-init="zoomWidth = 380;imgStyle = {width:'380px'}" ng-style="imgStyle"
+ng-mouse-wheel-up="zoomWidth = zoomWidth + 20; imgStyle.width = zoomWidth +'px'; "
+ng-mouse-wheel-down="zoomWidth = zoomWidth - 20;imgStyle.width = zoomWidth  +'px'; " ng-show="{{ngDialogData.datos.ImagenFactura.substring(ngDialogData.datos.ImagenFactura.length-4,ngDialogData.datos.ImagenFactura.length) !== '.pdf'}}"/>
                   
-                   <img src='{{ngDialogData.datos.ImagenFactura}}'  width='380' height='600' alt="" class="img-responsive center-block" />
+                   <!--img src='{{ ngDialogData.datos.ImagenFactura }}'  width='380' height='600' alt="" class="img-responsive center-block" / -->
                  
                 </div>
                 <!-- /.col -->

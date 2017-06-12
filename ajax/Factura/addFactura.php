@@ -23,7 +23,7 @@
 				$FchVenc = date_format(date_create_from_format('d/m/Y', $request->FechaVencimiento), 'Y-m-d H:i:s');*/
 
 				
-				$query="INSERT INTO factura( Monto, Emisor, Glosa, Receptor, Descuento, UtilidadEsperada, UtilidadReal, FechaPublicacion, FechaPago, FechaVencimiento, PlazoPago, DiasPago, ImagenFactura,DescuentoSeguro, UtilidadEsperadaSeguro, Comentario, FechaExpiracion) VALUES ($request->Monto , '$request->Emisor' , '' , '$request->Receptor' , $request->Descuento , $request->UtilidadEsperada , null , '$datenow' , null , '$FchVenc' , null , $request->DiasPago , '$request->ImagenFactura', $request->DescuentoSeguro, $request->UtilidadEsperadaSeguro, '$request->Comentario', '$FchExp' )";
+				$query="INSERT INTO factura( Monto, Emisor, Glosa, Receptor, Descuento, UtilidadEsperada, UtilidadReal, FechaPublicacion, FechaPago, FechaVencimiento, PlazoPago, DiasPago, ImagenFactura,DescuentoSeguro, UtilidadEsperadaSeguro, Comentario, FechaExpiracion) VALUES ($request->Monto , '".htmlspecialchars($request->Emisor)."', '' , '".htmlspecialchars($request->Receptor)."' , $request->Descuento , $request->UtilidadEsperada , null , '$datenow' , null , '$FchVenc' , null , $request->DiasPago , '$request->ImagenFactura', $request->DescuentoSeguro, $request->UtilidadEsperadaSeguro, '$request->Comentario', '$FchExp' )";
 				
                 
 				if($mysqli->query($query))
